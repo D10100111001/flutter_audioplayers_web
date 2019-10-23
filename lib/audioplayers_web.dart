@@ -22,15 +22,18 @@ class AudioplayersPlugin {
         final bool respectSilence = call.arguments['respectSilence'];
         final bool stayAwake = call.arguments['stayAwake'];
         return play(url);
+      case 'loadAll':
+        return [];
       default:
         throw PlatformException(
             code: 'Unimplemented',
-            details: "The url_launcher plugin for web doesn't implement "
+            details: "The audioplayers plugin for web doesn't implement "
                 "the method '${call.method}'");
     }
   }
 
   bool play(String url) {
+
     final audioElement = html.AudioElement(url);
     audioElement.play();
     return true;
