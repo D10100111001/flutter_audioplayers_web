@@ -33,8 +33,8 @@ class AudioplayersPlugin {
   }
 
   int play(String url) {
-    //final webUrl = 'assets/assets/$url';
-    final audioElement = html.AudioElement(url);
+    final webUrl = 'assets/assets/$url';
+    final audioElement = html.AudioElement(webUrl);
     audioElement.play();
     return 0;
   }
